@@ -184,13 +184,7 @@
 
         // Get the id of the data to display
         let url = document.location.href;
-        let vars = (url + "").split("?")[1].split("&");
-        let id = "";
-        vars.forEach(l => {
-            let infos = l.split("=");
-            if (infos[0] == "id") { id = infos[1]; }
-        })
-        id= "poesie-americaine-en-traduction"
+        let id = "poesie-americaine-en-traduction";
         try{
         // Load the JSON file with information about the data
         fetch('infos-' + id + '.json').then(function (response) {
