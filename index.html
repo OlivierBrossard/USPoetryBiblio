@@ -113,6 +113,15 @@
                                 // Create a new cell in the row for each value
                                 let td = document.createElement("td");
                                 let text = document.createTextNode(i[f]);
+                                //Add a link to Bibl. Type
+                                if (f=="Bibl. Type"){
+                                    let link = document.createElement("a");
+                                    link.appendChild(text);
+                                    link.setAttribute("href", "https://www.poetscritics.org/bibliographie-de-poesie-des-etats-unis-damerique-en-traduction-francaise-1786-2022/#structure");
+                                    link.setAttribute("target", "_blank");
+                                    td.appendChild(link);
+                                }else{
+                                    
                                 // If the value looks like a link, add a link
                                 if (i[f].substring(0, 4) == "http") {
                                     let link = document.createElement("a");
@@ -122,6 +131,7 @@
                                     td.appendChild(link);
                                 } else {
                                     td.appendChild(text);
+                                }
                                 }
                                 tr.appendChild(td);
                             })
